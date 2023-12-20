@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2022",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strict": true,
+    "rootDir": "./ts",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "removeComments": true
+  },
+  "include": [
+    "./ts/**/*"
+, "types/server.d.ts"  ],
+  "exclude": [
+    "./node_modules",
+    "./dist",
+    "./test"
+  ]
+}

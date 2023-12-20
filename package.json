@@ -1,0 +1,27 @@
+{
+  "name": "http-matcher",
+  "version": "1.0.0",
+  "description": "A simple asynchronous http server, based on node.",
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "types": "./index.d.ts",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonnyJong/http-matcher.git"
+  },
+  "keywords": [
+    "http"
+  ],
+  "author": "jonnyjonny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JonnyJong/http-matcher/issues"
+  },
+  "homepage": "https://github.com/JonnyJong/http-matcher#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.5"
+  }
+}
