@@ -3,17 +3,18 @@ import net from "node:net";
 import { IServer, Matcher, Responser } from "../types/server";
 export * from "./url";
 
-export function tryPort(port: number): Promise<boolean> {
+export function tryPort(port: number): Promise<string | void> {
   return new Promise((resolve)=>{
     let server = net.createServer();
     server.on('listening', ()=>{
       server.close();
-      resolve(true);
+      resolve();
     });
     server.on('error', (err)=>{
-      // @ts-ignore
-      if (err.code !== 'EADDRINUSE') return;
-      resolve(false);
+      if (['EADDRINUSE', 'EACCES', 'EADDRNOTAVAIL', 'EAFNOSUPPORT', 'EAGAIN', 'EWOULDBLOCK'].includes((err as any).code)) {
+        return resolve((err as any).code);
+      }
+      resolve();
     });
   server.listen(port);
   });
