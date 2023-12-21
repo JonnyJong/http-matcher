@@ -5,7 +5,7 @@ export type Responser = (req: IncomingMessage, res: ServerResponse<IncomingMessa
 export type Matcher = RegExp | ((url: string)=>boolean);
 
 export class IServer {
-  constructor();
+  constructor(port: number);
   /**
    * @readonly
    */
